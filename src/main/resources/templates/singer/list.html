@@ -7,6 +7,7 @@
 <body>
 <h1> Singers List</h1>
 <a th:href="@{/singers/create/}">Create New Singer</a>
+<div class="alert" th:if="${message}" th:text="${message}"></div>
 <form>
     Search singer by name:
     <input name="searchName" type="text"/>

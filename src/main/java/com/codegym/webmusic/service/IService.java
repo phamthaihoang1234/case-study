@@ -10,5 +10,5 @@ public interface IService<E> {
 //    E findById(Long id);
     Optional<Singer> findById(Long id);
     E save(E e);
-    E remove(Long id);
+    void remove(Long id);
 }

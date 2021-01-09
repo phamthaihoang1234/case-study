@@ -8,6 +8,8 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface SingerRepository extends PagingAndSortingRepository<Singer,Long> {
-    Page<Singer> findAllByNameContaining(String name, Pageable pageable);
+public interface SingerRepository extends PagingAndSortingRepository<Singer, Long> {
+    Page<Singer> findAllByNameContains(String name, Pageable pageable);
+
+    Page<Singer> findAll(Pageable pageable);
 }

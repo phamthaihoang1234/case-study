@@ -7,5 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 public interface SingerService extends IService<Singer> {
-    Page<Singer> findAllByNameContaining(String name, Pageable pageable);
+    Page<Singer> findAllByNameContains(String name, Pageable pageable);
+
+    Page<Singer> findAll(Pageable pageable);
 }

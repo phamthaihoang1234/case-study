@@ -33,14 +33,17 @@ public class SingerServiceImpl implements SingerService {
     }
 
     @Override
-    public Singer remove(Long id) {
-        Singer singer = singerRepository.findById(id).get();
-        if (singer != null) singerRepository.deleteById(id);
-        return singer;
+    public void remove(Long id) {
+        singerRepository.deleteById(id);
     }
 
     @Override
-    public Page<Singer> findAllByNameContaining(String name, Pageable pageable) {
-        return singerRepository.findAllByNameContaining(name,pageable);
+    public Page<Singer> findAllByNameContains(String name, Pageable pageable) {
+        return singerRepository.findAllByNameContains(name,pageable);
+    }
+
+    @Override
+    public Page<Singer> findAll(Pageable pageable) {
+        return singerRepository.findAll(pageable);
     }
 }
